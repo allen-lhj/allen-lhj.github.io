@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>webpack</title>
+      <link href="/2022/12/19/webpack/"/>
+      <url>/2022/12/19/webpack/</url>
+      
+        <content type="html"><![CDATA[<h1 id="webpack"><a href="#webpack" class="headerlink" title="webpack"></a>webpack</h1><p>webpack 是一个开源的JavaScritpt模块打包工具,其最核心的功能是解决模块之间的依赖,将各个模块按照特定的规则和顺序组织在一起,这个过程叫做模块打包</p><h2 id="模块打包原理"><a href="#模块打包原理" class="headerlink" title="模块打包原理"></a>模块打包原理</h2><p>一个最简单的Webpack打包结果(bundle)</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">// index.js</span><br><span class="hljs-keyword">const</span> calculator = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;./calculator.js&#x27;</span>);<br><span class="hljs-keyword">const</span> sum = calculator.<span class="hljs-title function_">add</span>(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>);<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;sum&#x27;</span>, sum);<br>   <br><span class="hljs-comment">// calculator.js</span><br><span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = &#123;<br>    <span class="hljs-attr">add</span>: <span class="hljs-keyword">function</span>(<span class="hljs-params">a, b</span>) &#123;<br>        <span class="hljs-keyword">return</span> a + b;<br>    &#125;<br>&#125;;<br><br><span class="hljs-comment">// 立即执行匿名函数</span><br>(<span class="hljs-keyword">function</span>(<span class="hljs-params">modules</span>) &#123;<br>    <span class="hljs-comment">//模块缓存</span><br>    <span class="hljs-keyword">var</span> installedModules = &#123;&#125;;<br>    <span class="hljs-comment">// 实现require</span><br>    <span class="hljs-keyword">function</span> <span class="hljs-title function_">__webpack_require__</span>(<span class="hljs-params">moduleId</span>) &#123;<br>        ...<br>    &#125;<br>    <span class="hljs-comment">// 执行入口模块的加载</span><br>    <span class="hljs-keyword">return</span> <span class="hljs-title function_">__webpack_require__</span>(__webpack_require__.<span class="hljs-property">s</span> = <span class="hljs-number">0</span>);<br>&#125;)(&#123;<br>    <span class="hljs-comment">// modules：以key-value的形式存储所有被打包的模块</span><br>    <span class="hljs-number">0</span>: <span class="hljs-keyword">function</span>(<span class="hljs-params"><span class="hljs-variable language_">module</span>, <span class="hljs-built_in">exports</span>, __webpack_require__</span>) &#123;<br>        <span class="hljs-comment">// 打包入口</span><br>        <span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = <span class="hljs-title function_">__webpack_require__</span>(<span class="hljs-string">&quot;3qiv&quot;</span>);<br>    &#125;,<br>    <span class="hljs-string">&quot;3qiv&quot;</span>: <span class="hljs-keyword">function</span>(<span class="hljs-params"><span class="hljs-variable language_">module</span>, <span class="hljs-built_in">exports</span>, __webpack_require__</span>) &#123;<br>        <span class="hljs-comment">// index.js内容</span><br>    &#125;,<br>    <span class="hljs-attr">jkzz</span>: <span class="hljs-keyword">function</span>(<span class="hljs-params"><span class="hljs-variable language_">module</span>, <span class="hljs-built_in">exports</span></span>) &#123;<br>        <span class="hljs-comment">// calculator.js 内容</span><br>    &#125;<br>&#125;);<br></code></pre></td></tr></table></figure><span id="more"></span><ol><li>最外层的匿名函数中初始化浏览器执行环境,包括定义<strong>installedModules</strong>对象、__webpack_require__函数等,为模块的加载做一些准备工作</li><li>加载入口模块,每个bundle都有且只有一个入口模块,在上面的例子中,index.js是入口模块,在浏览器中会从它开始执行</li><li>执行模块代码.如果执行到了modle.exports则记录下模块的导出值;如果中间遇到了require函数(准确地说是__webpack_require__),则会暂时交出执行权,进入__webpack_require__函数体内进行加载其他模块的逻辑</li><li>在**<strong>webpack_require</strong><strong>中判断即将加载的模块是否存在于</strong>installedModule**中.如果存在直接取值,否则回到第三步,执行该模块的代码来获取导出值</li><li>所有的依赖都已执行完毕,最后执行权又回到入口模块.当入口代码执行完毕,也就意味着整个bundle运行结束.</li></ol><p>第三步和第四步是一个递归的过程,webpack为每个模块创造来一个可以导出和导入模块的环境,但是本质上并没有修改代码的执行逻辑,因此代码执行的顺序和模块加载的顺序是完全一致的.</p><p>面对工程中成百上千的模块webpack如何将它们有序的组织在一起,了解一些webpack的核心概念</p><ul><li>入口</li><li>输出</li><li>loader</li><li>插件</li><li>模式</li><li>浏览器兼容性</li><li>环境</li></ul><h2 id="entry-入口"><a href="#entry-入口" class="headerlink" title="entry 入口"></a>entry 入口</h2><p>在一切流程的最开始，我们需要指定一个或多个入口（entry），也就是告诉Webpack具体从源码目录下的哪个文件开始打包。如果把工程中各个模块的依赖关系当作一棵树，那么入口就是这棵依赖树的根<br><img src="./webpack/entry.jpg"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 构建 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> webpack </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hello World</title>
       <link href="/2022/12/17/hello-world/"/>
       <url>/2022/12/17/hello-world/</url>

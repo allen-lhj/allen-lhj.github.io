@@ -202,6 +202,58 @@
   
   <article class="article post card" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://example.com/2022/12/19/webpack/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="John Doe">
+        <meta itemprop="description" content="">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="小刘">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2022/12/19/webpack/" itemprop="url">webpack</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2022-12-19T19:19:14+08:00">2022-12-19 19:19:14</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E6%9E%84%E5%BB%BA/" itemprop="url" rel="index"><span itemprop="name">构建</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <h1 id="webpack"><a href="#webpack" class="headerlink" title="webpack"></a>webpack</h1><p>webpack 是一个开源的JavaScritpt模块打包工具,其最核心的功能是解决模块之间的依赖,将各个模块按照特定的规则和顺序组织在一起,这个过程叫做模块打包</p>
+<h2 id="模块打包原理"><a href="#模块打包原理" class="headerlink" title="模块打包原理"></a>模块打包原理</h2><p>一个最简单的Webpack打包结果(bundle)</p>
+<figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">// index.js</span><br><span class="hljs-keyword">const</span> calculator = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;./calculator.js&#x27;</span>);<br><span class="hljs-keyword">const</span> sum = calculator.<span class="hljs-title function_">add</span>(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>);<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;sum&#x27;</span>, sum);<br>   <br><span class="hljs-comment">// calculator.js</span><br><span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = &#123;<br>    <span class="hljs-attr">add</span>: <span class="hljs-keyword">function</span>(<span class="hljs-params">a, b</span>) &#123;<br>        <span class="hljs-keyword">return</span> a + b;<br>    &#125;<br>&#125;;<br><br><span class="hljs-comment">// 立即执行匿名函数</span><br>(<span class="hljs-keyword">function</span>(<span class="hljs-params">modules</span>) &#123;<br>    <span class="hljs-comment">//模块缓存</span><br>    <span class="hljs-keyword">var</span> installedModules = &#123;&#125;;<br>    <span class="hljs-comment">// 实现require</span><br>    <span class="hljs-keyword">function</span> <span class="hljs-title function_">__webpack_require__</span>(<span class="hljs-params">moduleId</span>) &#123;<br>        ...<br>    &#125;<br>    <span class="hljs-comment">// 执行入口模块的加载</span><br>    <span class="hljs-keyword">return</span> <span class="hljs-title function_">__webpack_require__</span>(__webpack_require__.<span class="hljs-property">s</span> = <span class="hljs-number">0</span>);<br>&#125;)(&#123;<br>    <span class="hljs-comment">// modules：以key-value的形式存储所有被打包的模块</span><br>    <span class="hljs-number">0</span>: <span class="hljs-keyword">function</span>(<span class="hljs-params"><span class="hljs-variable language_">module</span>, <span class="hljs-built_in">exports</span>, __webpack_require__</span>) &#123;<br>        <span class="hljs-comment">// 打包入口</span><br>        <span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = <span class="hljs-title function_">__webpack_require__</span>(<span class="hljs-string">&quot;3qiv&quot;</span>);<br>    &#125;,<br>    <span class="hljs-string">&quot;3qiv&quot;</span>: <span class="hljs-keyword">function</span>(<span class="hljs-params"><span class="hljs-variable language_">module</span>, <span class="hljs-built_in">exports</span>, __webpack_require__</span>) &#123;<br>        <span class="hljs-comment">// index.js内容</span><br>    &#125;,<br>    <span class="hljs-attr">jkzz</span>: <span class="hljs-keyword">function</span>(<span class="hljs-params"><span class="hljs-variable language_">module</span>, <span class="hljs-built_in">exports</span></span>) &#123;<br>        <span class="hljs-comment">// calculator.js 内容</span><br>    &#125;<br>&#125;);<br></code></pre></td></tr></table></figure>
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/webpack/" rel="tag"><i class="fas fa-tags"></i>webpack</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
       <link itemprop="mainEntityOfPage" href="http://example.com/2022/12/17/hello-world/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
         <meta itemprop="name" content="John Doe">
@@ -280,21 +332,21 @@
     
     <div class="archives-count count-block">
       <div class="site-count-title">归档</div>
-      <div><a href="/archives/">1</a></div>
+      <div><a href="/archives/">2</a></div>
     </div>
     
     
     
     <div class="categories-count count-block">
       <div class="site-count-title">分类</div>
-      <div><a href="/categories/">0</a></div>
+      <div><a href="/categories/">1</a></div>
     </div>
     
     
     
     <div class="tags-count count-block">
       <div class="site-count-title">标签</div>
-      <div><a href="/tags/">0</a></div>
+      <div><a href="/tags/">1</a></div>
     </div>
     
     
