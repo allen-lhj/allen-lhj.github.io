@@ -232,7 +232,7 @@
       </div>
     </header>
     <main class="post-main" itemprop="articleBody">
-      <h1 id="webpack"><a href="#webpack" class="headerlink" title="webpack"></a>webpack</h1><p>webpack 是一个开源的JavaScritpt模块打包工具,其最核心的功能是解决模块之间的依赖,将各个模块按照特定的规则和顺序组织在一起,这个过程叫做模块打包</p>
+      <p>webpack 是一个开源的JavaScritpt模块打包工具,其最核心的功能是解决模块之间的依赖,将各个模块按照特定的规则和顺序组织在一起,这个过程叫做模块打包</p>
 <h2 id="模块打包原理"><a href="#模块打包原理" class="headerlink" title="模块打包原理"></a>模块打包原理</h2><p>一个最简单的Webpack打包结果(bundle)</p>
 <figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">// index.js</span><br><span class="hljs-keyword">const</span> calculator = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;./calculator.js&#x27;</span>);<br><span class="hljs-keyword">const</span> sum = calculator.<span class="hljs-title function_">add</span>(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>);<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;sum&#x27;</span>, sum);<br>   <br><span class="hljs-comment">// calculator.js</span><br><span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = &#123;<br>    <span class="hljs-attr">add</span>: <span class="hljs-keyword">function</span>(<span class="hljs-params">a, b</span>) &#123;<br>        <span class="hljs-keyword">return</span> a + b;<br>    &#125;<br>&#125;;<br><br><span class="hljs-comment">// 立即执行匿名函数</span><br>(<span class="hljs-keyword">function</span>(<span class="hljs-params">modules</span>) &#123;<br>    <span class="hljs-comment">//模块缓存</span><br>    <span class="hljs-keyword">var</span> installedModules = &#123;&#125;;<br>    <span class="hljs-comment">// 实现require</span><br>    <span class="hljs-keyword">function</span> <span class="hljs-title function_">__webpack_require__</span>(<span class="hljs-params">moduleId</span>) &#123;<br>        ...<br>    &#125;<br>    <span class="hljs-comment">// 执行入口模块的加载</span><br>    <span class="hljs-keyword">return</span> <span class="hljs-title function_">__webpack_require__</span>(__webpack_require__.<span class="hljs-property">s</span> = <span class="hljs-number">0</span>);<br>&#125;)(&#123;<br>    <span class="hljs-comment">// modules：以key-value的形式存储所有被打包的模块</span><br>    <span class="hljs-number">0</span>: <span class="hljs-keyword">function</span>(<span class="hljs-params"><span class="hljs-variable language_">module</span>, <span class="hljs-built_in">exports</span>, __webpack_require__</span>) &#123;<br>        <span class="hljs-comment">// 打包入口</span><br>        <span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = <span class="hljs-title function_">__webpack_require__</span>(<span class="hljs-string">&quot;3qiv&quot;</span>);<br>    &#125;,<br>    <span class="hljs-string">&quot;3qiv&quot;</span>: <span class="hljs-keyword">function</span>(<span class="hljs-params"><span class="hljs-variable language_">module</span>, <span class="hljs-built_in">exports</span>, __webpack_require__</span>) &#123;<br>        <span class="hljs-comment">// index.js内容</span><br>    &#125;,<br>    <span class="hljs-attr">jkzz</span>: <span class="hljs-keyword">function</span>(<span class="hljs-params"><span class="hljs-variable language_">module</span>, <span class="hljs-built_in">exports</span></span>) &#123;<br>        <span class="hljs-comment">// calculator.js 内容</span><br>    &#125;<br>&#125;);<br></code></pre></td></tr></table></figure>
 <span id="more"></span>
@@ -272,10 +272,10 @@
   <nav class="page-nav">
     <div class="page-nav-next page-nav-item">
       
-      <a href="/2022/12/17/hello-world/" rel="next" title="Hello World"><i class="fas fa-angle-left"></i><span class="nav-title">Hello World</span></a>
-      
     </div>
     <div class="page-nav-prev page-nav-item">
+      
+      <a href="/2022/12/20/01-%E5%8F%91%E5%B1%95%E5%8F%B2%E3%80%81ECMA/" rel="prev" title="01-发展史、ECMA"><span class="nav-title">01-发展史、ECMA</span><i class="fas fa-angle-right"></i></a>
       
     </div>
   </nav>
@@ -310,21 +310,21 @@
     
     <div class="archives-count count-block">
       <div class="site-count-title">归档</div>
-      <div><a href="/archives/">2</a></div>
+      <div><a href="/archives/">3</a></div>
     </div>
     
     
     
     <div class="categories-count count-block">
       <div class="site-count-title">分类</div>
-      <div><a href="/categories/">1</a></div>
+      <div><a href="/categories/">2</a></div>
     </div>
     
     
     
     <div class="tags-count count-block">
       <div class="site-count-title">标签</div>
-      <div><a href="/tags/">1</a></div>
+      <div><a href="/tags/">2</a></div>
     </div>
     
     
@@ -346,7 +346,7 @@
     <hr>
     <div class="post-toc sidebar-item" id="toc-div">
       <div><i class="fas fa-list-ol"></i>文章目录</div>
-      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#webpack"><span class="toc-text">webpack</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#%E6%A8%A1%E5%9D%97%E6%89%93%E5%8C%85%E5%8E%9F%E7%90%86"><span class="toc-text">模块打包原理</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#entry-%E5%85%A5%E5%8F%A3"><span class="toc-text">entry 入口</span></a></li></ol></li></ol></div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#%E6%A8%A1%E5%9D%97%E6%89%93%E5%8C%85%E5%8E%9F%E7%90%86"><span class="toc-text">模块打包原理</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#entry-%E5%85%A5%E5%8F%A3"><span class="toc-text">entry 入口</span></a></li></ol></div>
     </div>
     
     

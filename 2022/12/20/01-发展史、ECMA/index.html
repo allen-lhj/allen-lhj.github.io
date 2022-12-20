@@ -157,7 +157,7 @@
     </script>
     
     <script defer type="text/javascript" src="/js/custom.js"></script>
-    <title>Hello World | 小刘</title>
+    <title>01-发展史、ECMA | 小刘</title>
   <meta name="generator" content="Hexo 5.4.2"></head>
   <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
     
@@ -201,7 +201,7 @@
   
   <article class="article post card" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="http://example.com/2022/12/17/hello-world/">
+      <link itemprop="mainEntityOfPage" href="http://example.com/2022/12/20/01-%E5%8F%91%E5%B1%95%E5%8F%B2%E3%80%81ECMA/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
        <meta itemprop="name" content="John Doe">
        <meta itemprop="description" content="">
@@ -212,34 +212,133 @@
       </span>
     </div>
     <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">Hello World</h1>
+      <h1 class="post-title" itemprop="name headline">01-发展史、ECMA</h1>
       <div class="post-meta">
         
         <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2022-12-17T23:03:16+08:00">2022-12-17 23:03:16</time></span>
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2022-12-20T10:34:45+08:00">2022-12-20 10:34:45</time></span>
         </span>
         
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a></span>
+        </span>
         
         
       </div>
     </header>
     <main class="post-main" itemprop="articleBody">
-      <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+      <h2 id="5大浏览器的内核"><a href="#5大浏览器的内核" class="headerlink" title="5大浏览器的内核"></a>5大浏览器的内核</h2><ol>
+<li>IE ——-&gt; <code>trident</code></li>
+<li>Chrome —-&gt; <code>webkit---&gt; blink</code></li>
+<li>Safari ——-&gt; <code>webkit</code></li>
+<li>Firefox ——&gt; <code>gecko</code></li>
+<li>Opera ——-&gt; <code>presto---&gt;webkit---&gt;blink</code></li>
+</ol>
+<h2 id="浏览器的历史与JS的诞生"><a href="#浏览器的历史与JS的诞生" class="headerlink" title="浏览器的历史与JS的诞生"></a>浏览器的历史与JS的诞生</h2><ol>
+<li><strong>1990年</strong><ol>
+<li>蒂姆 伯纳斯 李，通过超文本分享资讯，他开发了一个叫做 world wide web，并且移植到C语言上，更名为libwww/nexus,已经可以实现允许他人浏览他编写的网站，此时可以称作真正的浏览器。</li>
+</ol>
+</li>
+<li><strong>1993年</strong><ol>
+<li>在美国伊利诺大学，NCSA组织的（马克安德森），开发了MOSIAC浏览器，这时已经可以显示图片，成为图形化浏览器</li>
+</ol>
+</li>
+<li><strong>1994年</strong><ol>
+<li>马克安德森与硅图SGI的吉姆克拉克成立了MOSIAC communication corporation，由于商标权，MOSICA的商标权属于伊利诺大学并且转给了 spy glasss公司，所以他们更名为Netscape communication corporation</li>
+<li>也就是后来的网景公司    </li>
+<li>网景公司开发了netscape navigator流行了十年左右，直到2003年</li>
+</ol>
+</li>
+<li><strong>1996年</strong><ol>
+<li>微软公司收购spy glass</li>
+<li>通过MOSIAC开发出IE，internet explorer 1.0</li>
+<li>在同一年发布了IE3，与脚本_JScript_</li>
+<li>网景公司Brendan eich在NETSCAPE NAVIGATOR，开发出来livescript。这个时候js是没有单独的引擎的，脚本的性能非常低</li>
+<li>JAVA火起来了之后，网景公司与java所有方SUN公司合作推广宣传产品，</li>
+<li>livescript更名为—–&gt;javascript</li>
+</ol>
+</li>
+<li><strong>2001年</strong><ol>
+<li>IE6 XP 诞生，JS引擎出现</li>
+</ol>
+</li>
+<li><strong>2003年</strong><ol>
+<li>mozilla公司，开发了firefox -&gt; netscape navigator</li>
+</ol>
+</li>
+<li><strong>2008年</strong><ol>
+<li>google 基于 WEBKIT BLINK GEARS</li>
+<li>开发出chrome浏览器</li>
+<li>v8引擎</li>
+<li>javascript引擎</li>
+<li>v8引擎直接翻译机器码</li>
+<li>独立于浏览器运行</li>
+</ol>
+</li>
+<li><strong>2009年</strong><ol>
+<li>甲骨文oracle收购SUN公司，JS的所有权归于甲骨文<h2 id="ECMA"><a href="#ECMA" class="headerlink" title="ECMA"></a>ECMA</h2></li>
+</ol>
+</li>
+</ol>
+<ul>
+<li><code>European Computer Manufactures Association</code>:欧洲计算机制造联合会</li>
+<li>ECMA 评估、开发、认可电信、计算机标准</li>
+<li>ECMA-262—&gt; ECMAScript 脚本语言的规范</li>
+</ul>
+<h2 id="轮转时间片实现单线程的JavaScript模拟多线程"><a href="#轮转时间片实现单线程的JavaScript模拟多线程" class="headerlink" title="轮转时间片实现单线程的JavaScript模拟多线程"></a>轮转时间片实现单线程的JavaScript模拟多线程</h2><p>js通过轮转时间片模拟多线程，即短时间内轮流执行多个任务的片段</p>
+<ol>
+<li><p>执行任务1，任务2</p>
+</li>
+<li><p>切分任务1，任务2</p>
+</li>
+<li><p>随机排列这些任务片段，组成队列</p>
+</li>
+<li><p>按照排列这些队列顺序将任务片段送进JS进程</p>
+</li>
+<li><p>JS线程执行一个又一个的任务片段</p>
+<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><p>JS中使用var（variable）声明变量</p>
+<figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> a; <span class="hljs-comment">// 变量声明</span><br>a = <span class="hljs-number">3</span>; <span class="hljs-comment">// 变量赋值</span><br><span class="hljs-keyword">var</span> a = <span class="hljs-number">3</span>; <span class="hljs-comment">// 变量赋值</span><br></code></pre></td></tr></table></figure>
+<h3 id="命名规范"><a href="#命名规范" class="headerlink" title="命名规范"></a>命名规范</h3></li>
+<li><p>不能以数字开头</p>
+</li>
+<li><p>能以字母，_ $ 开头</p>
+</li>
+<li><p>不能使用关键字 保留字</p>
+</li>
+<li><p>命名要有语义化</p>
+<h2 id="jS数据类型"><a href="#jS数据类型" class="headerlink" title="jS数据类型"></a>jS数据类型</h2><p>原始值：<code>Number</code>、<code>String</code> 、<code>Boolean</code>、<code>undefined</code>、<code>null</code></p>
+</li>
+</ol>
+<p>引用类型：<code>object</code>、<code>array</code>、<code>function</code>、<code>date</code>、<code>RegExp</code></p>
+<ol>
+<li><p>原始值存储在栈内存中，当声明一个变量a，赋值为1时，会在栈内存中开辟一块空间命名为a，值保存的是1</p>
+</li>
+<li><p>当给a再次赋值为3时，会重新开辟一块空间a，保存值变为3</p>
+</li>
+<li><p>原本保存1的空间并不会删除，所以js中原始值无法删除</p>
+</li>
+<li><p>引用类型，在栈内存中保存的是一个地址，这个地址是变量值在堆内存中的地址</p>
+</li>
+<li><p>所以当复制一个引用类型时，会在栈内存中复制一份引用类型的地址，两个变量存储的地址都指向的是在堆内存保存的一个值</p>
+</li>
+<li><p>所以这时如果通过其中一个变量修改这个引用类型，那么两个变量的值都会改变,例如</p>
+</li>
+</ol>
+<figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> a = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>];<br><span class="hljs-keyword">var</span> b = a;<br>a.<span class="hljs-title function_">push</span>(<span class="hljs-number">4</span>);<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(b); <span class="hljs-comment">// [1,2,3,4]</span><br></code></pre></td></tr></table></figure>
 
     </main>
     <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/ES3/" rel="tag"><i class="fas fa-tags"></i>ES3</a>
+        
+      </div>
       
     </footer>
   </article>
@@ -248,10 +347,12 @@
   <nav class="page-nav">
     <div class="page-nav-next page-nav-item">
       
+      <a href="/2022/12/19/webpack/" rel="next" title="webpack"><i class="fas fa-angle-left"></i><span class="nav-title">webpack</span></a>
+      
     </div>
     <div class="page-nav-prev page-nav-item">
       
-      <a href="/2022/12/19/webpack/" rel="prev" title="webpack"><span class="nav-title">webpack</span><i class="fas fa-angle-right"></i></a>
+      <a href="/2022/12/20/02-%E8%AF%AD%E6%B3%95%E3%80%81%E9%94%99%E8%AF%AF%E3%80%81%E8%A7%84%E8%8C%83/" rel="prev" title="02-语法、错误、规范"><span class="nav-title">02-语法、错误、规范</span><i class="fas fa-angle-right"></i></a>
       
     </div>
   </nav>
@@ -286,21 +387,21 @@
     
     <div class="archives-count count-block">
       <div class="site-count-title">归档</div>
-      <div><a href="/archives/">2</a></div>
+      <div><a href="/archives/">3</a></div>
     </div>
     
     
     
     <div class="categories-count count-block">
       <div class="site-count-title">分类</div>
-      <div><a href="/categories/">1</a></div>
+      <div><a href="/categories/">2</a></div>
     </div>
     
     
     
     <div class="tags-count count-block">
       <div class="site-count-title">标签</div>
-      <div><a href="/tags/">1</a></div>
+      <div><a href="/tags/">2</a></div>
     </div>
     
     
@@ -322,7 +423,7 @@
     <hr>
     <div class="post-toc sidebar-item" id="toc-div">
       <div><i class="fas fa-list-ol"></i>文章目录</div>
-      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#Quick-Start"><span class="toc-text">Quick Start</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#Create-a-new-post"><span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#Run-server"><span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#Generate-static-files"><span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#Deploy-to-remote-sites"><span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#5%E5%A4%A7%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E5%86%85%E6%A0%B8"><span class="toc-text">5大浏览器的内核</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E5%8E%86%E5%8F%B2%E4%B8%8EJS%E7%9A%84%E8%AF%9E%E7%94%9F"><span class="toc-text">浏览器的历史与JS的诞生</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#ECMA"><span class="toc-text">ECMA</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#%E8%BD%AE%E8%BD%AC%E6%97%B6%E9%97%B4%E7%89%87%E5%AE%9E%E7%8E%B0%E5%8D%95%E7%BA%BF%E7%A8%8B%E7%9A%84JavaScript%E6%A8%A1%E6%8B%9F%E5%A4%9A%E7%BA%BF%E7%A8%8B"><span class="toc-text">轮转时间片实现单线程的JavaScript模拟多线程</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#%E5%8F%98%E9%87%8F"><span class="toc-text">变量</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83"><span class="toc-text">命名规范</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#jS%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">jS数据类型</span></a></li></ol></div>
     </div>
     
     
